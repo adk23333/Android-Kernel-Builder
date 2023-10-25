@@ -39,7 +39,7 @@
     "AnyKernel3": {
       "use": true,
       "release": true,
-      "repo": "https://github.com/adk23333/AnyKernel3",
+      "repo": "https://github.com/adk23333/AnyKernel3/",
       "branch": "sagit"
     }
   }
