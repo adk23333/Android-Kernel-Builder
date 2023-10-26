@@ -153,9 +153,9 @@ jobs:
           ARCH=$(echo $params | jq -r ".ARCH")
           CC=$(echo $params | jq -r ".CC")
 
-          args="-j${{ env.THREAD }} -no-integrated-as"
+          args="-j${{ env.THREAD }}"
           if [ -n "${{ env.OUT_DIR }}" ]; then
-            mkdir -p ${{ env.OUT_DIR }} && args="$args O=${{ env.OUT_DIR }}"
+            mkdir -p ${{ env.OUT_DIR }} && args="$args O=${{ env.OUT_DIR }} -no-integrated-as"
           fi
           if [ -n "$ARCH" ]; then
             args="$args ARCH=$ARCH"
