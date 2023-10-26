@@ -221,7 +221,7 @@ jobs:
           args: ${{ steps.generate-args.outputs.args }}
         run: |
           echo "PATH Variable: $PATH"
-          make -Wno-error=-Wint-conversion ${{ env.args }}
+          make -w ${{ env.args }}
 
       - name: "💛 Upload Image"
         uses: actions/upload-artifact@v3
