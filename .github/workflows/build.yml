@@ -153,7 +153,7 @@ jobs:
           ARCH=$(echo $params | jq -r ".ARCH")
           CC=$(echo $params | jq -r ".CC")
 
-          args="-j${{ env.THREAD }}"
+          args="-j${{ env.THREAD }} -w"
           if [ -n "${{ env.OUT_DIR }}" ]; then
             mkdir -p ${{ env.OUT_DIR }} && args="$args O=${{ env.OUT_DIR }}"
           fi
@@ -221,7 +221,7 @@ jobs:
           args: ${{ steps.generate-args.outputs.args }}
         run: |
           echo "PATH Variable: $PATH"
-          make -w ${{ env.args }}
+          make ${{ env.args }}
 
       - name: "💛 Upload Image"
         uses: actions/upload-artifact@v3
