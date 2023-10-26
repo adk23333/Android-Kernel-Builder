@@ -155,7 +155,7 @@ jobs:
 
           args="-j${{ env.THREAD }}"
           if [ -n "${{ env.OUT_DIR }}" ]; then
-            mkdir -p ${{ env.OUT_DIR }} && args="$args O=${{ env.OUT_DIR }} -no-integrated-as"
+            mkdir -p ${{ env.OUT_DIR }} && args="$args O=${{ env.OUT_DIR }}"
           fi
           if [ -n "$ARCH" ]; then
             args="$args ARCH=$ARCH"
